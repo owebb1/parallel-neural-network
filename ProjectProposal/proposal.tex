@@ -1,0 +1,168 @@
+\documentclass[11pt]{article}
+
+% use some other pre-defined class definitions for the style of this document.   
+% The .cls and .sty files typically contain comments on how to use them in your latex document.  For example, if you look at psfig.sty, the file contains comments that summarize commands implemented by this style file and how to use them.
+% files are in: /usr/share/texlive/texmf-dist/tex/latex/preprint/
+\usepackage{fullpage}
+\usepackage{subfigure,indentfirst}
+% for url
+\usepackage{hyperref}
+% for underlined text
+\usepackage[normalem]{ulem}
+
+% use some packages for importing figures of different types
+% pdfig is one for importing .pdf files.  sadly, they are not all
+% compatible, so you often have to convert figures to the same type.
+\usepackage{epsfig,graphicx}
+
+
+% you can also define your own formatting directives.  I don't like
+% all the space around the itemize and enumerate directives, so
+% I define my own versions: my_enumerate and my_itemize
+\newenvironment{my_enumerate}{
+  \begin{enumerate}
+    \setlength{\itemsep}{1pt}
+      \setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}}{\end{enumerate}
+}
+
+\newenvironment{my_itemize}{
+  \begin{itemize}
+    \setlength{\itemsep}{1pt}
+      \setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}}{\end{itemize}
+}
+
+% this starts the document
+\begin{document}
+
+
+\title{CS87 Project Proposal: Training a Neural Network in Parallel}
+
+\author{Owen Webb, George Briggs \\ 
+Computer Science Department, Swarthmore College, Swarthmore, PA  19081}
+
+\maketitle
+
+\section {Introduction}\label{intro} 
+
+Neural networks are a subset of deep learning algorithms that, mimicking the design of neurons in the human brain, is able to model complex patterns in datasets using many hidden layers and non-linear activation functions. Recently, they have been gaining a lot of popularity due to advances in computer hardware and due to their high levels of accuracy, especially when trained with huge amount of data. However, while these qualities are certainly strengths, they come at a cost. In order to achieve these high levels of accuracy and utilize such large amounts of data, neural networks can take very long amounts of time to train. The amount of use cases that neural networks currently have is greatly diminished by their long training time. This is why implementing a neural network in parallel to speed up the training process could be very useful, as it addresses one of the primary critiques of a very successful algorithm. 
+
+In implementing a neural network in parallel, we hope to observe a number of results. Our primary focus in our experiments will be on the training time of our neural network and on the accuracy of our neural network. A successful implementation of a parallelized neural network would have the same accuracy as a sequential neural network, but would have a smaller training time.
+
+\section {Related Work}\label{rel}
+
+When analyzing the existing research, we have seen entirely different approaches to parallelizing neural networks. One such approach came from a study performed by  Shallue~\cite{Shallue:NNTraining}, who took the approach of data parallelization. Rather than parallelizing their neural network model, they parallelized their data by distributed the training examples across different processors to compute ‘gradient updates’, then aggregated these updates locally. The primary variable that Shallue tuned for was batch size. Their goal was to see if they could keep increases their batch size without increasing the training time of the model.
+
+In Dahl, Nehall, etc~\cite{dahl:NNCluster}, we saw an approach of data parallelization that was focused on trying to reduce training time on a non-customized cluster. At the time of writing, most of the research in distributed neural network training was on specially designed clusters that would allow for less communication overhead. This implied that limiting message passing was not as important in the specially designed cluster as it was for Dahl. Dahl's reserach proposed that there was a way to train a neural network on a distributed cluster using Ethernet and reduce the training time significantly. 
+
+One very interesting implementation was built by Uber Technologies. Uber built Horovod.ai which is seen in Sergeev, etc ~\cite{Horovod:journals/corr/abs-1802-05799}. Horovod is a library to run Tenserflow, a popular machine learning framework developed by Google, over a distributed system. This implementation is very similar to ours as it is built using MPI on a cluster. The command line resembled MPI as it requires a hostfile, and the number of processors, GPUs in this case, and the file to run. This would be a very simple implementation for us to make as it is abstracted, but our project would have become too simple if we approached it using this framework.
+
+In Section~\ref{annon}, the Annotated Bibliography, we have given summaries to three of our sources that are mainly used. 
+
+\section {Solution}\label{soln}
+
+The first step in our solution is creating a sequential neural network to serve as our control or comparison group. The sequential will be taken from an open source github repo to be named later, which contains a neural network built from scratch and written in C++. It is important that our sequential neural network is built from scratch because we want to ensure that the alterations that we plan on making during our parallelized implementation are not hidden by the abstraction present in many dictionary implementations. We will train our sequential model  on a MNIST dataset which contains images of hand-written numbers and the goal of the neural network will be to classify which number is written.
+
+The next step is to implement our parallelized neural network. We have decided to use MPI to parallelize our neural network. In particular, suppose we have n ranks, then for every training iteration we will make n copies of our neural network and split our training batch into n ranks. These ranks then train their copy of the neural network on their portion of the data. Then when each rank has finished training their copy of the neural network, they will each locally compute their gradient then send the gradient to a server. This server will then compute a new set of weights for a neural network based on the weights and the accuracy of each neural networks that was passed in. This new set of weights will be used to create a new neural network which will be sent back to each rank. The ranks now all have the same version of an updated neural network and the process will repeat from square one. After we have completed this process for our specified amount of epochs, we will return the final neural network with the resulting weights as our trained model.
+
+With this implementation, we are able to divide our training data into n pieces for each sequence which should decrease the total run-time, hopefully, without decreasing our total accuracy. We hypothesize that our model will be less prone to overfitting, because our weights are computed as an average of several weights, so each individual training example will have less of an effect on our model.
+
+After the parallelization is complete, we will test our hypotheses by comparing our run-time and accuracy to the sequential neural network. For consistency, we will train both neural networks on the same dataset and compare the resulting accuracy and training time. There will likely be several variables in which we will have to tune each model for (ex. batch size, epochs, ect.) in order to optimize their results. There are also several stopping conditions that we will test to find differences in our models. For example, we will consider stopping our training when our accuracy on the training data reaches a certain threshold, when we have completed a standardized number of epochs, or even once an allotted time has passed.
+
+
+\section {Experiments}\label{exper}
+
+We will run two experiments to test sequential vs parallelized neural network training. The two metrics we will use to compare the two outcomes. The metrics will be training time as well as accuracy. To test training time, we will time purely the amount of time that is spend on training. "How long" a neural network takes to train is somewhat subjective, as there are multiple stopping conditions that can be used. Most likely, we will run the training process for a certain number of epochs that we will determine once data set is finalized. As done in Dahl, etc~\cite{dahl:NNCluster}, this seems to be an industry standard. Another possibility would be to run until we hit a certain error percentage for the neural network. For accuracy, we define this as the percentage of correct predictions that our model makes. To find the accuracy, we set aside a portion of our full data set so that it is hidden hidden from the neural network while training. A final possible testing method, would be to standardize the amount of training time allotted to each process. For example, to handle the use-case where we only have a specific amount of time to train our model, we can give each training process 20 seconds to train then compare accuracies of the models after training.
+
+Our two experiments will be of two variations. One using a sequentially trained neural network and the other using neural network trained in parallel. We will use the sequential neural network that's mentioned in Section \ref{soln} for the first experiment, timing the training and testing for accuracy as described above. The outputs from this experiment will be compared to experiment 2. 
+
+For experiment 2, we plan on training the neural network in parallel for a certain number of epochs. The neural network will be set up using MPI and a cluster described as in Section \ref{soln}. For this experiment, we will collect both metrics, training time and accuracy, in order to compare to experiment 1. 
+
+\section {Equipment Needed}\label{equip}
+
+\begin{itemize}
+    \item MPI - In order to accomplish our distributed implementaiton, we will use MPI as Iandola, etc~\cite{iandola2016firecaffe} did. We hope to use it similarly, using a reduction tree to sum the weights, but we might use the parameter server that the paper on Iandola, etc~\cite{iandola2016firecaffe} recommends against. 
+    \item CS Lab Machines - We hope to run our distributed training on the CS computers over Ethernet
+    \item Bridges-2 - Because of how Iandola, etc~\cite{iandola2016firecaffe} state the importance of using Infiniband over Ethernet to limit communication costs, we may run an experiment on Bridges-2 to see what improvements come from this
+    \item Starter code for sequential neural network from scratch that is fairly easy to find. We have a few options, but we won't be able to solidify until we start to work with the data.
+    \item Pytorch for C++ (libtorch) - We are hoping to use the starting code mentioned above, but if not we might be able to use Pytorch.
+    
+\end{itemize}
+
+\section {Schedule}\label{sched}
+
+Our plan is broken down into three main pieces to achieve our results. 
+The first step is to create a neural network similar to our parallel version, 
+but sequential, and get accuracy and training time results. The second is to
+parellize the training process for this neural network. The third is to collect
+data for accuracy and training times for the parallel neural network and 
+compare. Below is a schedule of what we plan to work on and complete each week.  
+
+% here is an example of a numbered list 
+\begin{my_enumerate}
+  \item \textbf{Week 9, Nov. 1:} Research and develop a project proposal. This is a significant piece as our question has many ways to answer it and we must decide on the correct one.
+  \item \textbf{Week 10, Nov. 8:} Create a Neural Network from training sequentially. We are planning on using an open source implementation of a sequential Neural Network, so we can focus on parallelization. During this week, we must set up the open source code to fit our dataset.
+  \item \textbf{Week 11, Nov. 15:} Finish and time training for sequential Neural Network. We hope to start on parellization of the Neural Network this week.
+  \item \textbf{Week 12, Nov. 22:} Continue to parallelize training process. Have a working neural network in parallel and begin to optimize the training.
+  \item \textbf{Week 13, Nov. 29:}  This week we should finish the parallel neural network.
+  \item \textbf{Week 14, Dec. 06:} Test Neural Network to retrieve Parallel Results for experiment 2 as mentioned in Section \ref{exper}. Begin write up on our paper.
+  \item \textbf{Week 15, Dec. 13:} Paper and Presentation work
+\end{my_enumerate} 
+
+
+\section {Conclusion}\label{conc} 
+
+Neural networks are known for their ability to handle huge amounts of data and their ability to classify and make decisions with an incredibly accurate rate. Their drawback, however, is that they are computationally very expensive and time consuming to train. This is why we have decided to parallelize a neural network training model in order to decrease the time of training without compromising the accuracy level. We will parallelize using MPI at the end of each batch, where we will create duplicates of the neural network on each processor. During the each training process, we will split the batch among our ranks who will train on their individual duplicate of the neural network. After they have trained using their portion of the data, they will pass their weights to a network which will create a new neural network based on a computation involving these weights. Then this process will repeat with the new weights until we have gone through all of our training iterations. In conclusion, we hope to observe that through this parallelization, we are able to decrease the amount of time required to train a neural network. We also hope to observe an accuracy which is comparable to the sequential neural network. We believe that the results of this project could provide a new method of training neural networks which due to the speedup, would increase the total number of use cases that neural networks have.
+% The References section is auto generated by specifying the .bib file
+% containing bibtex entries, and the style I want to use (plain)
+% compiling with latex, bibtex, latex, latex, will populate this
+% section with all references from the .bib file that I cite in this paper
+% and will set the citations in the prose to the numbered entry here
+\bibliography{proposal}
+\bibliographystyle{plain}
+
+% force a page break
+\newpage 
+
+% I want the Annotated Bib to be single column pages
+\onecolumn
+\section*{Annotated Bibliography}\label{annon} 
+
+\
+
+\noindent \textbf{ Christopher J. Shallue, Jaehoon Lee, Joesph Antognini, Jascha Sohl-Dickstein, Roy Frostig, and George E. Dahl. (2019). "Measuring the Effects of Data Parallelism on Neural Network Training.}
+
+\
+
+    Recent advances in hardware have greatly increased the training ability of neural networks by enabling larger models to be trained on even larger datasets then they ever have before. However, the bottleneck of neural networks remains to be time, which both limits their performance and the amount of potential use-cases that they have. This is the motivation behind the attempt to parallelize and increase the speed of the training process. The method of parallelization this paper implemented was data parallelism, which distributed the training examples across different processors to compute ‘gradient updates’, or higher order derivative information, then aggregates these updates locally. In order to test the performance implications of this parallelization technique, they  increased the batch size and measured the effect on training time, as measured by the steps required to reach a defined goal. During this process would alter the training algorithm, data set, and model in order to identify any other sources of optimization.
+    
+    One of the benefits of data parallelization is its ease of implementation. Contrary to model parallelism which may depend on model size and structure, it can be done on any neural network architecture. An interesting takeaway from this paper was their disagreement with the existing research at the time. In particular, Dahl found no evidence that performance decreases with increased batch size, rather that optimization algorithms may allow perfect scaling across many models and data sets. However, increasing batch size cannot be done so blindly or it will inhibit performance. Due to the extra work required to optimize this data parallelism, Dahl suggests that large scale systems should consider all types of parallelism at their disposal. A potential implication of this work on our work, is optimizing other aspects of the neural network. This paper does not identify general principals for scaling with larger batch sizes, so this could be a possible focus of our project.
+
+\
+
+\
+
+\noindent \textbf{ George Dahl , '08; Alan McAvinney , '05; and Tia Newhall. (2008). "Parallelizing Neural Network Training For Cluster Systems". Proceedings Of The IASTED International Conference On Parallel And Distributed Computing And Networks. 220-225. }
+
+\
+
+	This work presents a new alternative for training neural networks on a cluster of workstations. While other similar works have been presented, this work specifically notes that they are trying to limit the amount of communication between processors because on a cluster of workstations the communication cost is just too great. To solve this problem, they present to us Pattern Parallel Training (PPT). PPT accomplishes this by duplicating the full neural network on each node in the cluster, so that individual nodes are not required to send too much information via MPI to each other during a training session. This improves the overhead cost over most of the previous research that was proposed, Network Parallel Training (NPT). In NPT, nodes of an Artificial Neural Network (ANN) are spread across processors in a cluster. NPT is more appropriate for use when you have a system specially designed for your use case. The system can then be built to limit communication costs between nodes, but on a normal workstation system, this collapses due to these costs. PPT also explains how there are certain consistencies that must occur throughout the process such as ensuring at each step the ANNs are identical. They saw a significant speed up for their results which for 8 processors, improved their training time by 10.6 times. This implementation points us in the direction for which we want to go as we are hoping to do a similar project.
+	
+	This work is very similar to our work as we are exploring trying to improve training time of a neural network through parallelization. While we haven’t explored exactly how we would like to implement this, whether using MPI, CUDA, Pthreads, or a hybrid of these. This paper also used the eight bit parity problem to train its neural network on because it is very simple to specify, but it takes a lot of training epochs to learn. Ideally, we believe that in order to see our results, we want to use images as our dataset so that the training data is large and we can see a significant difference. One branch off of this project we would like to explore is testing the accuracy of the neural network once it is trained in parallel vs sequential. We are hoping to not only see an increase in speedup, but we are also hoping to see similar results on our testing data. 
+
+
+\
+
+\
+
+\noindent \textbf{ Iandola, Forrest N., et al. "Firecaffe: near-linear acceleration of deep neural network training on compute clusters." Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016.}
+
+\
+
+    This paper explores the training of a deep neural network on a cluster system. Because of the need for a reduction in Deep Neural Network (DNN) training time, this paper looks at the development of a new system, FireCaffe, that incorporates a couple of main features that make it unique. First, it establishes that a custom cluster of NVIDIA gpus connected via infiniband, which is quicker than ethernet. This helps reduce communication costs in their implementation. For this high bandwidth, low latency model, they use the Titan supercomputer at Oak Ridge Leadership Computing Facility. In addition to the hardware, they have optimized the neural network to achieve minimum communication costs by choosing data parallelism and only communicating when workers are exchanging weight gradients during backpropagation. The last main optimization they made was using a reduction tree to compute the weights at each step rather than a parameter server. The process was able to sum the weights from each server in significantly less time compared to parameter server implementation mentioned in the paper. Training their neural network on ImageNet-1k, which contains over 1 million images, they saw a speedup of over 39x on 128 NVIDIA gpus. This speedup with the relative same accuracy is what we are looking to show in our project.
+    
+    This paper and its contents are very similar to what we would like to accomplish. Having taken an open source dataset, they trained a Deep Neural Network in parallel on a cluster, keeping the accuracy of the DNN close to the sequential version and significantly reducing training time. Now where this differs from what we hope to accomplish is we cannot create the custom cluster like they did. We are hoping to use the Swarthmore Cluster (Strelka) that would not allow us to have inifiniband, making communication costs that much more important in our implementation. We do have access to the Pittsburgh Supercomputing Centers Bridges-2, with Infiniband if we do desire. Our goal is similar, but with slightly different constraints our our system. We also most likely will use a smaller image set than the ImageNet-1k as we do not have 21 days to wait for our sequential neural network to train. 
+
+
+\end{document}

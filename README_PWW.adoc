@@ -1,0 +1,17 @@
+Our sequential code is compileable.
+
+This is how to run that:
+
+$ cd source/ProjectCode/build/
+
+Use the following command to generate the Makefile:
+
+$ cmake CMakeLists.txt
+
+Now, run make.
+
+$ make
+
+Then to run the actual training and testing of the neural network, run:
+ 
+$ ./neuralNet

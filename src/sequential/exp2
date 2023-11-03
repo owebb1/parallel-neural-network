@@ -1,0 +1,68 @@
+epochs=30; batch size=10
+
+Loaded: ../../MNIST_Data/train-images-idx3-ubyte
+Loaded: ../../MNIST_Data/train-labels-idx1-ubyte
+Loaded: ../../MNIST_Data/t10k-images-idx3-ubyte
+Loaded: ../../MNIST_Data/t10k-labels-idx1-ubyte
+Epoch 0: Start of network testing
+8765/10000
+Epoch 1: Start of network testing
+8906/10000
+Epoch 2: Start of network testing
+9089/10000
+Epoch 3: Start of network testing
+8933/10000
+Epoch 4: Start of network testing
+8971/10000
+Epoch 5: Start of network testing
+9089/10000
+Epoch 6: Start of network testing
+8979/10000
+Epoch 7: Start of network testing
+9106/10000
+Epoch 8: Start of network testing
+9151/10000
+Epoch 9: Start of network testing
+9222/10000
+Epoch 10: Start of network testing
+9124/10000
+Epoch 11: Start of network testing
+9114/10000
+Epoch 12: Start of network testing
+9125/10000
+Epoch 13: Start of network testing
+9249/10000
+Epoch 14: Start of network testing
+9148/10000
+Epoch 15: Start of network testing
+9274/10000
+Epoch 16: Start of network testing
+9243/10000
+Epoch 17: Start of network testing
+9262/10000
+Epoch 18: Start of network testing
+9246/10000
+Epoch 19: Start of network testing
+9326/10000
+Epoch 20: Start of network testing
+9283/10000
+Epoch 21: Start of network testing
+9178/10000
+Epoch 22: Start of network testing
+9138/10000
+Epoch 23: Start of network testing
+9228/10000
+Epoch 24: Start of network testing
+9271/10000
+Epoch 25: Start of network testing
+9268/10000
+Epoch 26: Start of network testing
+9234/10000
+Epoch 27: Start of network testing
+9273/10000
+Epoch 28: Start of network testing
+9202/10000
+Epoch 29: Start of network testing
+9242/10000
+Saved network parameters to trained_network_hiddenlayer1_neurons30_batchsize10_eta3
+Duration is 2947.25 seconds.

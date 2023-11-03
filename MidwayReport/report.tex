@@ -1,0 +1,48 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{subfigure,indentfirst}
+% for url
+\usepackage{hyperref}
+% for underlined text
+\usepackage[normalem]{ulem}
+
+% use some packages for importing figures of different types
+% pdfig is one for importing .pdf files.  sadly, they are not all
+% compatible, so you often have to convert figures to the same type.
+%\usepackage{pdffig}
+\usepackage{graphicx}
+
+% this starts the document
+\begin{document}
+
+\title{CS87 Midway Progress Report: Training a Neural Network in Parallel}
+
+\author{Owen Webb, George Briggs \\
+Computer Science Department, Swarthmore College, Swarthmore, PA  19081}
+
+\maketitle
+
+\section{Project Schedule/Milestones}
+
+
+\begin{itemize}
+  \item Week 9, Nov. 1: We had planned for all proposal work this week. While the week was mainly made up of proposal work, we began to think about data sets and code that we could use to pull as our starting point.
+\item Week 10, Nov. 8: This weeks plan was to get our sequential starting code taken from a previous Neural Network project to build so that we could measure its training time. We ended up completing our search for a neural network that was built from scratch (\href{https://github.com/tharrington923/neuralnet_handwritten_digit_recognition}{Link to Github Repository}). Much of this week was spent understading how the code base was built up and how we could eventually make it work. We tried multiple different neural networks from scratch that would not work for what we wanted to do, or we could not compile right away even before trying to include MPI.
+\item Week 11, Nov. 15: We identified our MNIST data set that both our models will be trained on. We then successfully ran the sequential implementation of our neural network and created several bash scripts to automate our testing. We ran our experiments on the sequential model over night and measured our accuracy and run-time. These results are stored in exp2 file in our sequential portion of our repository. We also made a copy of our sequential and began to parallelize using MPI. (Ran into problems involving our makefile and the MPI library) 
+\item Week 12, Nov. 22: Continue to parallelize our model and completely map out where in the sequential we believe we will put parallelization, so all we have left will be the implementation. The goal for this week is to establish a Makefile that builds and allows us to run them in parallel on multiple different processors while not necessarily sharing information yet. We do want to establish where we believe we will be passing information this week, so that next week all we have to do is implement the message passing at the predefined points. 
+\item Week 13, Nov. 29: Complete the parallel implementation of our neural network. This week we will actually implement the physical message passing to and from the parameter server. We will run initial tests during this week to make sure we do not have bugs and that when we do test in week 14, we will get proper results. Our hope is to only have to run tests the following week and right bash scripts that will run our training and testing.
+\item Week 14, Dec. 06: This will be our testing week. We will run many experiments comparing our two models based on their runtime and accuracy. We will likely have many controls to determine to determine where the two models differ the most. Finally, we will work on turning the experiments into graphics to be easily interpreted, that we will use in our paper and presentation. Also begin working on paper over the weekend.
+\item Week 15, Dec. 13: Paper and Presentation Work. Code and testing will be finished by now, so all we have to work on in the presentation and the paper. With the paper due the 15th, we will complete that in the first few days of the week. The presentation will be completed in the later half of the week.
+\end{itemize}
+
+
+\section {Difficulties}
+
+The first difficulty we ran into when starting this project was understanding the code we acquired from Github. Looking at someone else's code was much harder than we had thought it would be. This took time for us to establish how the repository was set up, and which files we would need to edit and understand at a deeper level. The second large issue we ran into was Makefile compatibility with MPI. The original repository used CMakeFiles to establish a Makefile, but this was very hard to understand. We tried initially to add MPI to the \textit{CMakeLists.txt} file, but this became increasingly complicated as there were multiple layers. We fixed this by adding a few adjustments to a standard Makefile that was supplied to us. This actually ended up simplifying our make process because we only use a small portion of the code base, so we could make using only those. The last difficulty we have run into is how we are going to reduce and which MPI functions we are planning on using. We have read multiple sources on the best way to reduce our problem, but some are tougher to implement than others. We have not directly solved this piece yet, but we plan on making these determinations more in Week 13 as we begin testing. We have two main choices we are deciding between, parameter server and MPI reduce. The later is know for quicker time in training with the same accuracies\cite{iandola2016firecaffe}, but the parameter server may be simpler, so that is our likely first step. Overall, we have run into a few difficulties, but no roadblocks that we have not been able to get around.
+
+
+\bibliography{report}
+\bibliographystyle{plain}
+
+\end{document}
+

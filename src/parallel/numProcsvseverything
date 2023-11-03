@@ -1,0 +1,80 @@
+****START*****
+num_procs=2
+
+[lime:2434122] *** Process received signal ***
+[lime:2434122] Signal: Segmentation fault (11)
+[lime:2434122] Signal code: Address not mapped (1)
+[lime:2434122] Failing at address: (nil)
+[lime:2434122] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x46210)[0x7f2730bda210]
+[lime:2434122] *** End of error message ***
+/home/owebb1/cs87/project/source/parallel/ProjectCode/src/run.sh: line 14: 2434122 Segmentation fault      (core dumped) mpirun -np $n --hostfile hostfile ./neuralnetparallel >> $OUTFILE
+***STOP****
+****START*****
+num_procs=4
+
+[lime:2434129] *** Process received signal ***
+[lime:2434129] Signal: Segmentation fault (11)
+[lime:2434129] Signal code: Address not mapped (1)
+[lime:2434129] Failing at address: (nil)
+[lime:2434129] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x46210)[0x7f1ef608e210]
+[lime:2434129] *** End of error message ***
+/home/owebb1/cs87/project/source/parallel/ProjectCode/src/run.sh: line 14: 2434129 Segmentation fault      (core dumped) mpirun -np $n --hostfile hostfile ./neuralnetparallel >> $OUTFILE
+***STOP****
+****START*****
+num_procs=8
+
+[lime:2434144] *** Process received signal ***
+[lime:2434144] Signal: Segmentation fault (11)
+[lime:2434144] Signal code: Address not mapped (1)
+[lime:2434144] Failing at address: (nil)
+[lime:2434144] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x46210)[0x7fd8966f9210]
+[lime:2434144] *** End of error message ***
+/home/owebb1/cs87/project/source/parallel/ProjectCode/src/run.sh: line 14: 2434144 Segmentation fault      (core dumped) mpirun -np $n --hostfile hostfile ./neuralnetparallel >> $OUTFILE
+***STOP****
+****START*****
+num_procs=16
+
+[lime:2434150] *** Process received signal ***
+[lime:2434150] Signal: Segmentation fault (11)
+[lime:2434150] Signal code: Address not mapped (1)
+[lime:2434150] Failing at address: (nil)
+[lime:2434150] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x46210)[0x7fe29e14a210]
+[lime:2434150] *** End of error message ***
+/home/owebb1/cs87/project/source/parallel/ProjectCode/src/run.sh: line 14: 2434150 Segmentation fault      (core dumped) mpirun -np $n --hostfile hostfile ./neuralnetparallel >> $OUTFILE
+***STOP****
+****START*****
+num_procs=32
+
+[lime:2434156] *** Process received signal ***
+[lime:2434156] Signal: Segmentation fault (11)
+[lime:2434156] Signal code: Address not mapped (1)
+[lime:2434156] Failing at address: (nil)
+[lime:2434156] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x46210)[0x7f07c8001210]
+[lime:2434156] *** End of error message ***
+/home/owebb1/cs87/project/source/parallel/ProjectCode/src/run.sh: line 14: 2434156 Segmentation fault      (core dumped) mpirun -np $n --hostfile hostfile ./neuralnetparallel >> $OUTFILE
+***STOP****
+****START*****
+num_procs=64
+
+[lime:2434163] *** Process received signal ***
+[lime:2434163] Signal: Segmentation fault (11)
+[lime:2434163] Signal code: Address not mapped (1)
+[lime:2434163] Failing at address: (nil)
+[lime:2434163] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x46210)[0x7fcd28f51210]
+[lime:2434163] *** End of error message ***
+/home/owebb1/cs87/project/source/parallel/ProjectCode/src/run.sh: line 14: 2434163 Segmentation fault      (core dumped) mpirun -np $n --hostfile hostfile ./neuralnetparallel >> $OUTFILE
+***STOP****
+****START*****
+num_procs=128
+
+[lime:2434170] *** Process received signal ***
+[lime:2434170] Signal: Segmentation fault (11)
+[lime:2434170] Signal code: Address not mapped (1)
+[lime:2434170] Failing at address: (nil)
+[lime:2434170] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x46210)[0x7fae6681a210]
+[lime:2434170] *** End of error message ***
+/home/owebb1/cs87/project/source/parallel/ProjectCode/src/run.sh: line 14: 2434170 Segmentation fault      (core dumped) mpirun -np $n --hostfile hostfile ./neuralnetparallel >> $OUTFILE
+***STOP****
+****START*****
+num_procs=2
+

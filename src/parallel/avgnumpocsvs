@@ -1,0 +1,756 @@
+****START*****
+num_procs=2
+
+Epoch 0 complete.
+Epoch 1 complete.
+Epoch 2 complete.
+Epoch 3 complete.
+Epoch 4 complete.
+Epoch 5 complete.
+Epoch 6 complete.
+Epoch 7 complete.
+Epoch 8 complete.
+Epoch 9 complete.
+Epoch 10 complete.
+Epoch 11 complete.
+Epoch 12 complete.
+Epoch 13 complete.
+Epoch 14 complete.
+Epoch 15 complete.
+Epoch 16 complete.
+Epoch 17 complete.
+Epoch 18 complete.
+Epoch 19 complete.
+Epoch 20 complete.
+Epoch 21 complete.
+Epoch 22 complete.
+Epoch 23 complete.
+Epoch 24 complete.
+Epoch 25 complete.
+Epoch 26 complete.
+Epoch 27 complete.
+Epoch 28 complete.
+Epoch 29 complete.
+Accuracy: 9456/10000
+Saved network parameters to trained_network_hiddenlayer1_neurons30_batchsize10_eta3_parallel
+Duration is 1630.56 seconds.
+***STOP****
+****START*****
+num_procs=2
+
+Epoch 0 complete.
+Epoch 1 complete.
+Epoch 2 complete.
+Epoch 3 complete.
+Epoch 4 complete.
+Epoch 5 complete.
+Epoch 6 complete.
+Epoch 7 complete.
+Epoch 8 complete.
+Epoch 9 complete.
+Epoch 10 complete.
+Epoch 11 complete.
+Epoch 12 complete.
+Epoch 13 complete.
+Epoch 14 complete.
+Epoch 15 complete.
+Epoch 16 complete.
+Epoch 17 complete.
+Epoch 18 complete.
+Epoch 19 complete.
+Epoch 20 complete.
+Epoch 21 complete.
+Epoch 22 complete.
+Epoch 23 complete.
+Epoch 24 complete.
+Epoch 25 complete.
+Epoch 26 complete.
+Epoch 27 complete.
+Epoch 28 complete.
+Epoch 29 complete.
+Accuracy: 9404/10000
+Saved network parameters to trained_network_hiddenlayer1_neurons30_batchsize10_eta3_parallel
+Duration is 1611.52 seconds.
+***STOP****
+****START*****
+num_procs=4
+
+Epoch 0 complete.
+Epoch 1 complete.
+Epoch 2 complete.
+Epoch 3 complete.
+Epoch 4 complete.
+Epoch 5 complete.
+Epoch 6 complete.
+Epoch 7 complete.
+Epoch 8 complete.
+Epoch 9 complete.
+Epoch 10 complete.
+Epoch 11 complete.
+Epoch 12 complete.
+Epoch 13 complete.
+Epoch 14 complete.
+Epoch 15 complete.
+Epoch 16 complete.
+Epoch 17 complete.
+Epoch 18 complete.
+Epoch 19 complete.
+Epoch 20 complete.
+Epoch 21 complete.
+Epoch 22 complete.
+Epoch 23 complete.
+Epoch 24 complete.
+Epoch 25 complete.
+Epoch 26 complete.
+Epoch 27 complete.
+Epoch 28 complete.
+Epoch 29 complete.
+Accuracy: 9520/10000
+Saved network parameters to trained_network_hiddenlayer1_neurons30_batchsize10_eta3_parallel
+Duration is 855.726 seconds.
+***STOP****
+****START*****
+num_procs=4
+
+Epoch 0 complete.
+Epoch 1 complete.
+Epoch 2 complete.
+Epoch 3 complete.
+Epoch 4 complete.
+Epoch 5 complete.
+Epoch 6 complete.
+Epoch 7 complete.
+Epoch 8 complete.
+Epoch 9 complete.
+Epoch 10 complete.
+Epoch 11 complete.
+Epoch 12 complete.
+Epoch 13 complete.
+Epoch 14 complete.
+Epoch 15 complete.
+Epoch 16 complete.
+Epoch 17 complete.
+Epoch 18 complete.
+Epoch 19 complete.
+Epoch 20 complete.
+Epoch 21 complete.
+Epoch 22 complete.
+Epoch 23 complete.
+Epoch 24 complete.
+Epoch 25 complete.
+Epoch 26 complete.
+Epoch 27 complete.
+Epoch 28 complete.
+Epoch 29 complete.
+Accuracy: 9510/10000
+Saved network parameters to trained_network_hiddenlayer1_neurons30_batchsize10_eta3_parallel
+Duration is 850.075 seconds.
+***STOP****
+****START*****
+num_procs=8
+
+Epoch 0 complete.
+Epoch 1 complete.
+Epoch 2 complete.
+Epoch 3 complete.
+Epoch 4 complete.
+Epoch 5 complete.
+Epoch 6 complete.
+Epoch 7 complete.
+Epoch 8 complete.
+Epoch 9 complete.
+Epoch 10 complete.
+Epoch 11 complete.
+Epoch 12 complete.
+Epoch 13 complete.
+Epoch 14 complete.
+Epoch 15 complete.
+Epoch 16 complete.
+Epoch 17 complete.
+Epoch 18 complete.
+Epoch 19 complete.
+Epoch 20 complete.
+Epoch 21 complete.
+Epoch 22 complete.
+Epoch 23 complete.
+Epoch 24 complete.
+Epoch 25 complete.
+Epoch 26 complete.
+Epoch 27 complete.
+Epoch 28 complete.
+Epoch 29 complete.
+Accuracy: 8610/10000
+Saved network parameters to trained_network_hiddenlayer1_neurons30_batchsize10_eta3_parallel
+Duration is 758.274 seconds.
+***STOP****
+****START*****
+num_procs=8
+
+Epoch 0 complete.
+Epoch 1 complete.
+Epoch 2 complete.
+Epoch 3 complete.
+Epoch 4 complete.
+Epoch 5 complete.
+Epoch 6 complete.
+Epoch 7 complete.
+Epoch 8 complete.
+Epoch 9 complete.
+Epoch 10 complete.
+Epoch 11 complete.
+Epoch 12 complete.
+Epoch 13 complete.
+Epoch 14 complete.
+Epoch 15 complete.
+Epoch 16 complete.
+Epoch 17 complete.
+Epoch 18 complete.
+Epoch 19 complete.
+Epoch 20 complete.
+Epoch 21 complete.
+Epoch 22 complete.
+Epoch 23 complete.
+Epoch 24 complete.
+Epoch 25 complete.
+Epoch 26 complete.
+Epoch 27 complete.
+Epoch 28 complete.
+Epoch 29 complete.
+Accuracy: 8626/10000
+Saved network parameters to trained_network_hiddenlayer1_neurons30_batchsize10_eta3_parallel
+Duration is 760.232 seconds.
+***STOP****
+****START*****
+num_procs=16
+
+Epoch 0 complete.
+Epoch 1 complete.
+Epoch 2 complete.
+Epoch 3 complete.
+Epoch 4 complete.
+Epoch 5 complete.
+Epoch 6 complete.
+Epoch 7 complete.
+Epoch 8 complete.
+Epoch 9 complete.
+Epoch 10 complete.
+Epoch 11 complete.
+Epoch 12 complete.
+Epoch 13 complete.
+Epoch 14 complete.
+Epoch 15 complete.
+Epoch 16 complete.
+Epoch 17 complete.
+Epoch 18 complete.
+Epoch 19 complete.
+Epoch 20 complete.
+Epoch 21 complete.
+Epoch 22 complete.
+Epoch 23 complete.
+Epoch 24 complete.
+Epoch 25 complete.
+Epoch 26 complete.
+Epoch 27 complete.
+Epoch 28 complete.
+Epoch 29 complete.
+Accuracy: 8585/10000
+Saved network parameters to trained_network_hiddenlayer1_neurons30_batchsize10_eta3_parallel
+Duration is 398.326 seconds.
+***STOP****
+****START*****
+num_procs=16
+
+Epoch 0 complete.
+Epoch 1 complete.
+Epoch 2 complete.
+Epoch 3 complete.
+Epoch 4 complete.
+Epoch 5 complete.
+Epoch 6 complete.
+Epoch 7 complete.
+Epoch 8 complete.
+Epoch 9 complete.
+Epoch 10 complete.
+Epoch 11 complete.
+Epoch 12 complete.
+Epoch 13 complete.
+Epoch 14 complete.
+Epoch 15 complete.
+Epoch 16 complete.
+Epoch 17 complete.
+Epoch 18 complete.
+Epoch 19 complete.
+Epoch 20 complete.
+Epoch 21 complete.
+Epoch 22 complete.
+Epoch 23 complete.
+Epoch 24 complete.
+Epoch 25 complete.
+Epoch 26 complete.
+Epoch 27 complete.
+Epoch 28 complete.
+Epoch 29 complete.
+Accuracy: 9455/10000
+Saved network parameters to trained_network_hiddenlayer1_neurons30_batchsize10_eta3_parallel
+Duration is 406.878 seconds.
+***STOP****
+****START*****
+num_procs=32
+
+Epoch 0 complete.
+Epoch 1 complete.
+Epoch 2 complete.
+Epoch 3 complete.
+Epoch 4 complete.
+Epoch 5 complete.
+Epoch 6 complete.
+Epoch 7 complete.
+Epoch 8 complete.
+Epoch 9 complete.
+Epoch 10 complete.
+Epoch 11 complete.
+Epoch 12 complete.
+Epoch 13 complete.
+Epoch 14 complete.
+Epoch 15 complete.
+Epoch 16 complete.
+Epoch 17 complete.
+Epoch 18 complete.
+Epoch 19 complete.
+Epoch 20 complete.
+Epoch 21 complete.
+Epoch 22 complete.
+Epoch 23 complete.
+Epoch 24 complete.
+Epoch 25 complete.
+Epoch 26 complete.
+Epoch 27 complete.
+Epoch 28 complete.
+Epoch 29 complete.
+Accuracy: 8509/10000
+Saved network parameters to trained_network_hiddenlayer1_neurons30_batchsize10_eta3_parallel
+Duration is 210.198 seconds.
+***STOP****
+****START*****
+num_procs=32
+
+Epoch 0 complete.
+Epoch 1 complete.
+Epoch 2 complete.
+Epoch 3 complete.
+Epoch 4 complete.
+Epoch 5 complete.
+Epoch 6 complete.
+Epoch 7 complete.
+Epoch 8 complete.
+Epoch 9 complete.
+Epoch 10 complete.
+Epoch 11 complete.
+Epoch 12 complete.
+Epoch 13 complete.
+Epoch 14 complete.
+Epoch 15 complete.
+Epoch 16 complete.
+Epoch 17 complete.
+Epoch 18 complete.
+Epoch 19 complete.
+Epoch 20 complete.
+Epoch 21 complete.
+Epoch 22 complete.
+Epoch 23 complete.
+Epoch 24 complete.
+Epoch 25 complete.
+Epoch 26 complete.
+Epoch 27 complete.
+Epoch 28 complete.
+Epoch 29 complete.
+Accuracy: 8498/10000
+Saved network parameters to trained_network_hiddenlayer1_neurons30_batchsize10_eta3_parallel
+Duration is 207.793 seconds.
+***STOP****
+****START*****
+num_procs=64
+
+Epoch 0 complete.
+Epoch 1 complete.
+Epoch 2 complete.
+Epoch 3 complete.
+Epoch 4 complete.
+Epoch 5 complete.
+Epoch 6 complete.
+Epoch 7 complete.
+Epoch 8 complete.
+Epoch 9 complete.
+Epoch 10 complete.
+Epoch 11 complete.
+Epoch 12 complete.
+Epoch 13 complete.
+Epoch 14 complete.
+Epoch 15 complete.
+Epoch 16 complete.
+Epoch 17 complete.
+Epoch 18 complete.
+Epoch 19 complete.
+Epoch 20 complete.
+Epoch 21 complete.
+Epoch 22 complete.
+Epoch 23 complete.
+Epoch 24 complete.
+Epoch 25 complete.
+Epoch 26 complete.
+Epoch 27 complete.
+Epoch 28 complete.
+Epoch 29 complete.
+Accuracy: 8397/10000
+Saved network parameters to trained_network_hiddenlayer1_neurons30_batchsize10_eta3_parallel
+Duration is 109.632 seconds.
+***STOP****
+****START*****
+num_procs=64
+
+Epoch 0 complete.
+Epoch 1 complete.
+Epoch 2 complete.
+Epoch 3 complete.
+Epoch 4 complete.
+Epoch 5 complete.
+Epoch 6 complete.
+Epoch 7 complete.
+Epoch 8 complete.
+Epoch 9 complete.
+Epoch 10 complete.
+Epoch 11 complete.
+Epoch 12 complete.
+Epoch 13 complete.
+Epoch 14 complete.
+Epoch 15 complete.
+Epoch 16 complete.
+Epoch 17 complete.
+Epoch 18 complete.
+Epoch 19 complete.
+Epoch 20 complete.
+Epoch 21 complete.
+Epoch 22 complete.
+Epoch 23 complete.
+Epoch 24 complete.
+Epoch 25 complete.
+Epoch 26 complete.
+Epoch 27 complete.
+Epoch 28 complete.
+Epoch 29 complete.
+Accuracy: 8380/10000
+Saved network parameters to trained_network_hiddenlayer1_neurons30_batchsize10_eta3_parallel
+Duration is 108.805 seconds.
+***STOP****
+****START*****
+num_procs=2
+
+***STOP****
+****START*****
+num_procs=4
+
+***STOP****
+****START*****
+num_procs=8
+
+***STOP****
+****START*****
+num_procs=16
+
+***STOP****
+****START*****
+num_procs=32
+
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87a
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87e
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87f
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87b
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87d
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87c
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87g
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87h
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87a
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87f
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87d
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87c
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87g
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87e
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87h
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+***STOP****
+****START*****
+num_procs=64
+
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87b
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+***STOP****
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87h
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87e
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87b
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87d
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87a
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87g
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87c
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87f
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87h
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87b
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87e
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87g
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87f
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87c
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87a
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
+------------------------------------------------------------
+A process or daemon was unable to complete a TCP connection
+to another process:
+  Local host:    cs87d
+  Remote host:   molasses
+This is usually caused by a firewall on the remote host. Please
+check that any firewall (e.g., iptables) has been disabled and
+try again.
+------------------------------------------------------------
