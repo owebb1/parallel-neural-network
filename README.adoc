@@ -1,26 +1,53 @@
-# Layout of the repo:
+# Parallel Neural Network Training Using MPI
 
-### Sequential Program Code:
-  `sequential/ProjectCode/src/*`
+## About the Project
+This project demonstrates a parallel approach to training neural networks using the Message Passing Interface (MPI). Leveraging Pattern Parallel Training, the process involves distributing equal portions of data across multiple processors, each running a clone of the neural network. During training, processors concurrently execute using their data chunk, and after each epoch, they participate in a collective operation to average the network's weights. This methodology has shown not only to accelerate training times but also, in some instances, to enhance the accuracy of the neural network with a specific number of processors. The outcomes emphasize the potential of parallel computing in overcoming the primary bottleneck of neural network training: time. The study further delves into the intricate balance between accuracy, the number of processors, and training duration.
 
-  - Very few edits here in this repository
-  - Most everything besides a few edits is copies from: https://github.com/tharrington923/neuralnet_handwritten_digit_recognition
+## Repository Structure
+
+### Sequential Program Code
+- Located under `sequential/ProjectCode/src/*`
+- The code in this directory has minimal changes and serves as the baseline for comparison with the parallel version.
 
 ### Parallel Adjusted Program
-  `parallel/ProjectCode/src/*`
+- Found in `parallel/ProjectCode/src/*`
+- The parallelization is implemented in `network.cpp` and `neuralnet.cpp`.
+- Other files remain unchanged from the sequential implementation.
 
-  - All parallelization is done in two files: ./network.cpp ./neuralnet.cpp
-  - other files are the same implementation as the sequential
-  - Added makefile, run script for experiments, and experiment output files
+### Utilities
+- An added Makefile for easier building of the programs.
+- A run script to facilitate the execution of experiments.
+- Experiment output files for analysis.
 
-# Running the Sequential Program
-  1. `$ cd sequential/ProjectCode/build`
-  2. `$ make`
-  3. `$ cd ../bin`
-  4. `$ ./neuralnet`
+## Running the Programs
 
+### Sequential Program
+To run the sequential version of the neural network training program, use the following commands:
 
-# Running the Parallel Program
-  1. `$ cd parallel/ProjectCode/src`
-  2. `$ make`
-  3. `$ mpirun -np 4 --hostfile hostfilec87 ./neuralnetparallel`
+```bash
+cd sequential/ProjectCode/build
+make
+cd ../bin
+./neuralnet
+```
+
+### Parallel Program
+
+To execute the parallel version, which utilizes MPI for distributed computing, follow these steps:
+
+```bash
+cd parallel/ProjectCode/src
+make
+mpirun -np <number_of_processors> --hostfile hostfilec87 ./neuralnetparallel
+```
+Replace `<number_of_processors>` with the desired number of processors to distribute the training workload.
+
+## References
+The sequential neural network codebase used as a starting point for parallelization is available at: [neuralnet_handwritten_digit_recognition](https://github.com/tharrington923/neuralnet_handwritten_digit_recognition).
+
+## License
+This project is open-source and available under the MIT License. For more details, see the LICENSE file in the repository.
+
+## Acknowledgments
+Credit to the authors of the original sequential neural network code.
+Special thanks to the contributors and maintainers of the MPI library, which made this parallelization possible.
